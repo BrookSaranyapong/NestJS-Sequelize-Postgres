@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('/') // localhost:4000/
+  @Get('/') // localhost:4000/api
   getHomeAPI() {
     return {
       version: '1.0.0',
@@ -13,7 +13,7 @@ export class AppController {
     };
   }
 
-  @Get('/hello') // localhost:4000/hello
+  @Get('/hello') // localhost:4000/api/hello
   getHello(): string {
     return this.appService.getHello();
   }
