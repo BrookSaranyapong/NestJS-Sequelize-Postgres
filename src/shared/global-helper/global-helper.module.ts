@@ -1,7 +1,9 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { GlobalHelperService } from './global-helper.service';
 
+@Global()
 @Module({
-  providers: [GlobalHelperService]
+  providers: [GlobalHelperService],
+  exports: [GlobalHelperService],
 })
 export class GlobalHelperModule {}
